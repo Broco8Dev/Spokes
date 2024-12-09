@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Spokes Design Agency</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body {
+            margin-bottom: 45px;
+        }
+
+        .card {
+            position: relative;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+
+        .price-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ebf8ff;
+            color: #3182ce;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="pt-20">
+        <section class="section">
+            <h1 class="section-title text-center text-4xl font-bold mb-8">Pricing Plans</h1>
+            <p style="text-align: center; opacity: 0.7; margin-bottom: 20px;">(Pricing is per-page)</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card text-center">
+                    <div class="price-badge">$0</div>
+                    <img class="w-16 h-16 mx-auto mb-6 text-blue-600" width="90" height="90" src="https://img.icons8.com/ios-glyphs/90/3b82f6/trial-version.png" alt="monitor"/>
+                    <h2 class="text-2xl font-semibold mb-4">Sample</h2>
+                    <p class="text-gray-500 mb-4">
+                        We'll create a preview of your site for FREE! You can use one of our plans to purchase the source code.
+                    </p>
+                    <a href="contact.html" class="nav-link text-blue-600 font-semibold">Get Started</a>
+                </div>
+
+                <div class="card text-center">
+                    <div class="price-badge">$10</div>
+                    <img class="w-16 h-16 mx-auto mb-6 text-blue-600" width="90" height="90" src="https://img.icons8.com/ios-glyphs/90/1DAF56/person-male.png" alt="lock"/>
+                    <h2 class="text-2xl font-semibold mb-4">Personal</h2>
+                    <p class="text-gray-500 mb-4">
+                        For personal use, we develop websites on the cheap, but still with our top-notch quality and unique style.
+                    </p>
+                    <a href="contact.html" class="nav-link text-blue-600 font-semibold">Get Started</a>
+                </div>
+
+                <div class="card text-center">
+                    <div class="price-badge">$30</div>
+                    <img class="w-16 h-16 mx-auto mb-6 text-blue-600" width="90" height="90" src="https://img.icons8.com/ios-glyphs/90/7833C9/shop--v1.png" alt="ok"/>
+                    <h2 class="text-2xl font-semibold mb-4">Business</h2>
+                    <p class="text-gray-500 mb-4">
+                       For corporate use, we deliver websites with stunning quality that are guaranteed to drive traffic to your business.
+                    </p>
+                    <a href="contact.html" class="nav-link text-blue-600 font-semibold">Get Started</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
