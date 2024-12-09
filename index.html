@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spokes | Digital Design Agency</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        #content-frame {
+            width: 100%;
+            height: 100vh;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="plane">
+            <div class="grid"></div>
+            <div class="glow"></div>
+        </div>
+        <div class="plane">
+            <div class="grid"></div>
+            <div class="glow"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">Spokes</div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                ☰
+            </button>
+            <div class="navbar-menu">
+                <a href="pages/main.html" data-page="pages/main.html" class="nav-link transition-link">Home</a>
+                <a href="pages/work.html" data-page="pages/work.html" class="nav-link transition-link">Work</a>
+                <a href="pages/services.html" data-page="pages/services.html" class="nav-link transition-link">Services</a>
+                <a href="pages/pricing.html" data-page="pages/pricing.html" class="nav-link transition-link">Pricing</a>
+                <a href="pages/contact.html" data-page="pages/contact.html" class="nav-link transition-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <footer class="footer">
+        <p>&copy; 2024 Spokes Design Agency. All rights reserved.</p>
+    </footer>
+
+    <main class="pt-20">
+        <iframe id="content-frame" src="pages/main.html"></iframe>
+    </main>
+
+    <script>
+        document.querySelectorAll('.transition-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageUrl = this.getAttribute('data-page');
+                const contentFrame = document.getElementById('content-frame');
+
+                contentFrame.style.opacity = '0';
+                contentFrame.style.filter = 'blur(3px)';
+                contentFrame.style.transform = 'scale(1.1)';
+                contentFrame.style.transition = 'opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease';
+
+                setTimeout(() => {
+                    contentFrame.src = pageUrl;
+
+                    contentFrame.onload = () => {
+                        contentFrame.style.opacity = '1';
+                        contentFrame.style.filter = 'blur(0)';
+                        contentFrame.style.transform = 'scale(1)';
+                    };
+                }, 300);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navbarMenu = document.querySelector('.navbar-menu');
+
+            menuToggle.addEventListener('click', function () {
+                if (navbarMenu.classList.contains('active')) {
+                    navbarMenu.classList.remove('active');
+                } else {
+                    navbarMenu.classList.add('active');
+                }
+            });
+        });
+
+
+    </script>
+    
+    <style>
+        #content-frame {
+            transition: opacity 0.3s ease, filter 0.3s ease transform 0.3s ease;
+        }
+    </style>
+    <script src="scripts/global.js"></script>
+</body>
+</html> 
